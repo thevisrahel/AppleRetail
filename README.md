@@ -259,8 +259,26 @@ El flujo básico del negocio es:
 
 <img width="781" height="781" alt="image" src="https://github.com/user-attachments/assets/1e114db7-9a3a-4d85-b5ce-0d1e1d7e5d92" />
 
+
+---
+
+## ANALYTICS
+
+###Ingresos mensuales
+
+<img width="518" height="268" alt="image" src="https://github.com/user-attachments/assets/bf6f708a-9133-4faa-bb00-8b4320106deb" />
+
+###Productos más vendidos
+
+<img width="515" height="270" alt="image" src="https://github.com/user-attachments/assets/bccc4e9a-2914-417e-99c8-daf669314430" />
+
+###Ventas por tienda
+
+<img width="553" height="274" alt="image" src="https://github.com/user-attachments/assets/5aafb389-d861-47ba-8ec1-961972653dab" />
+
+
+
 ## LINK -> Presentacion Final
 [Presentacion del Proyecto](https://apple-retail-sales-xiaoc5d.gamma.site/)
-
 
 
