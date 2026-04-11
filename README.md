@@ -254,7 +254,7 @@ El flujo básico del negocio es:
 
 ## DER
   
-* <img width="830" height="638" alt="image" src="https://github.com/user-attachments/assets/84d3e03c-467f-4d5d-bd6b-702ffe25dd21" />
+<img width="830" height="638" alt="image" src="https://github.com/user-attachments/assets/84d3e03c-467f-4d5d-bd6b-702ffe25dd21" />
 
 
 <img width="781" height="781" alt="image" src="https://github.com/user-attachments/assets/1e114db7-9a3a-4d85-b5ce-0d1e1d7e5d92" />
