@@ -264,15 +264,15 @@ El flujo básico del negocio es:
 
 ## ANALYTICS
 
-###Ingresos mensuales
+### Ingresos mensuales
 
 <img width="518" height="268" alt="image" src="https://github.com/user-attachments/assets/bf6f708a-9133-4faa-bb00-8b4320106deb" />
 
-###Productos más vendidos
+### Productos más vendidos
 
 <img width="515" height="270" alt="image" src="https://github.com/user-attachments/assets/bccc4e9a-2914-417e-99c8-daf669314430" />
 
-###Ventas por tienda
+### Ventas por tienda
 
 <img width="553" height="274" alt="image" src="https://github.com/user-attachments/assets/5aafb389-d861-47ba-8ec1-961972653dab" />
 
