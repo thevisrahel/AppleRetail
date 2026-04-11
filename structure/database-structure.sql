@@ -44,12 +44,16 @@ CREATE TABLE Customers (
     email VARCHAR(150),
     phone VARCHAR(50)
 );
-
+-- =========================
+-- Tabla Payment Methods
+-- =========================
 CREATE TABLE Payment_Methods (
     payment_method_id INT PRIMARY KEY,
     method_name VARCHAR(50) NOT NULL
 );
-
+-- =========================
+-- Tabla Sales
+-- =========================
 CREATE TABLE Sales (
     sale_id INT PRIMARY KEY,
     sale_date DATE NOT NULL,
