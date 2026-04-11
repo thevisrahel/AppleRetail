@@ -276,7 +276,9 @@ El flujo básico del negocio es:
 
 <img width="553" height="274" alt="image" src="https://github.com/user-attachments/assets/5aafb389-d861-47ba-8ec1-961972653dab" />
 
+### Clientes con más ventas
 
+<img width="629" height="315" alt="image" src="https://github.com/user-attachments/assets/63390378-f665-4a73-85d9-818194a5d13a" />
 
 ## LINK -> Presentacion Final
 [Presentacion del Proyecto](https://apple-retail-sales-xiaoc5d.gamma.site/)
