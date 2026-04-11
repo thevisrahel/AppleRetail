@@ -52,6 +52,8 @@ El flujo básico del negocio es:
 3. Los productos pertenecen a una categoría.
 4. Cada venta registra fecha, tienda y producto vendido.
 5. Algunas ventas pueden generar reclamos de garantía.
+   
+---
 
 ## 6) Vistas
 
