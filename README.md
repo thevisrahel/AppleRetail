@@ -53,220 +53,197 @@ El flujo básico del negocio es:
 4. Cada venta registra fecha, tienda y producto vendido.
 5. Algunas ventas pueden generar reclamos de garantía.
 
-Vistas:
+## 6) Vistas
 
-1.	vw_sales_detail
+### vw_sales_detail
 
-Descripción:
-Muestra el detalle completo de cada venta realizada.
-Objetivo:
-Permitir analizar ventas con toda la información relevante en una sola consulta (cliente, tienda, producto, categoría y método de pago).
-Tablas que la componen:
-•	Sales 
-•	Customers 
-•	Stores 
-•	Products 
-•	Category 
-•	Payment_Methods
+**Descripción:** Muestra el detalle completo de cada venta realizada.
+**Objetivo:** Permitir analizar ventas con toda la información relevante en una sola consulta (cliente, tienda, producto, categoría y método de pago).
+**Tablas que la componen:**
 
-2.	vw_sales_by_product
+* Sales
+* Customers
+* Stores
+* Products
+* Category
+* Payment_Methods
 
-Descripción:
-Resume la cantidad total vendida por producto.
-Objetivo:
-Identificar los productos más vendidos.
-Tablas:
-•	Sales 
-•	Products 
+### vw_sales_by_product
 
-3.	vw_sales_by_store
+**Descripción:** Resume la cantidad total vendida por producto.
+**Objetivo:** Identificar los productos más vendidos.
+**Tablas:**
 
-Descripción:
-Muestra el total de ventas por tienda.
-Objetivo:
-Evaluar el rendimiento de cada tienda.
-Tablas:
-•	Sales 
-•	Stores 
+* Sales
+* Products
 
-4.	vw_products_with_category
+### vw_sales_by_store
 
-Descripción:
-Lista los productos junto con su categoría, precio y fecha de lanzamiento.
-Objetivo:
-Facilitar la consulta de productos con su clasificación.
-Tablas:
-•	Products 
-•	Category 
+**Descripción:** Muestra el total de ventas por tienda.
+**Objetivo:** Evaluar el rendimiento de cada tienda.
+**Tablas:**
 
-5.	vw_warranty_detail
+* Sales
+* Stores
 
-Descripción:
-Muestra el detalle de reclamos de garantía.
-Objetivo:
-Controlar el estado de las garantías y su relación con ventas y productos.
-Tablas:
-•	Warranty 
-•	Warranty_Status 
-•	Sales 
-•	Products 
-•	Stores 
+### vw_products_with_category
 
+**Descripción:** Lista los productos junto con su categoría, precio y fecha de lanzamiento.
+**Objetivo:** Facilitar la consulta de productos con su clasificación.
+**Tablas:**
 
+* Products
+* Category
 
-6.	vw_sales_total
+### vw_warranty_detail
 
-Descripción:
-Calcula el monto total por cada venta.
-Objetivo:
-Evitar cálculos manuales y facilitar reportes financieros.
-Tablas:
-•	Sales 
-•	Products
+**Descripción:** Muestra el detalle de reclamos de garantía.
+**Objetivo:** Controlar el estado de las garantías y su relación con ventas y productos.
+**Tablas:**
 
-Funciones:
+* Warranty
+* Warranty_Status
+* Sales
+* Products
+* Stores
 
-1.	fn_total_sale
+### vw_sales_total
 
-Descripción:
-Calcula el total monetario de una venta específica.
-Objetivo:
-Obtener rápidamente el monto total sin repetir cálculos.
+**Descripción:** Calcula el monto total por cada venta.
+**Objetivo:** Evitar cálculos manuales y facilitar reportes financieros.
+**Tablas:**
 
-Tablas:
-•	Sales 
-•	Products 
+* Sales
+* Products
 
-2.	 fn_customer_total_purchases
-Descripción:
-Suma la cantidad total de productos comprados por un cliente.
-Objetivo:
-Medir el nivel de consumo de un cliente.
-Tabla:
-•	Sales 
+---
 
-3.	 fn_warranty_count_by_sale
-Descripción:
-Cuenta cuántos reclamos de garantía tiene una venta.
-Objetivo:
-Detectar productos o ventas problemáticas.
-Tabla:
-•	Warranty 
+## 7) Funciones
 
-4.	 fn_total_sales_by_store
-Descripción:
-Calcula el total de productos vendidos por una tienda.
-Objetivo:
-Evaluar rendimiento comercial.
-Tabla:
-•	Sales 
+### fn_total_sale
 
-Stored Procedures:
+**Descripción:** Calcula el total monetario de una venta específica.
+**Objetivo:** Obtener rápidamente el monto total sin repetir cálculos.
+**Tablas:**
 
-1.	sp_register_sale
+* Sales
+* Products
 
-Descripción:
-Registra una nueva venta.
-Objetivo:
-Centralizar el registro de ventas y evitar errores manuales.
-Tabla afectada:
-•	Sales 
+### fn_customer_total_purchases
 
-2.	sp_register_warranty
+**Descripción:** Suma la cantidad total de productos comprados por un cliente.
+**Objetivo:** Medir el nivel de consumo de un cliente.
+**Tabla:**
 
-Descripción:
-Registra un reclamo de garantía.
-Objetivo:
-Gestionar garantías de manera estructurada.
-Tabla:
-•	Warranty 
+* Sales
 
-3.	sp_update_warranty_status
+### fn_warranty_count_by_sale
 
-Descripción:
-Actualiza el estado de una garantía.
-Objetivo:
-Permitir el seguimiento del proceso de garantía.
-Tabla:
-•	Warranty 
+**Descripción:** Cuenta cuántos reclamos de garantía tiene una venta.
+**Objetivo:** Detectar productos o ventas problemáticas.
+**Tabla:**
 
-4.	 sp_sales_by_date_range
+* Warranty
 
-Descripción:
-Obtiene ventas entre dos fechas.
-Objetivo:
-Generar reportes por periodos.
-Tabla:
-•	Sales 
+### fn_total_sales_by_store
 
-5.	sp_sales_by_customer
+**Descripción:** Calcula el total de productos vendidos por una tienda.
+**Objetivo:** Evaluar rendimiento comercial.
+**Tabla:**
 
-Descripción:
-Obtiene ventas de un cliente específico.
-Objetivo:
-Analizar historial de compras.
-Tabla:
-•	Sales 
+* Sales
 
+---
 
+## 8) Stored Procedures
 
-Triggers: 
+### sp_register_sale
 
-1.	trg_validate_quantity
+**Descripción:** Registra una nueva venta.
+**Objetivo:** Centralizar el registro de ventas y evitar errores manuales.
+**Tabla afectada:**
 
-Descripción:
-Este trigger se ejecuta antes de insertar un registro en la tabla Sales.
-Objetivo:
-Validar que la cantidad de productos vendidos sea mayor a cero.
-Funcionamiento:
-Si el valor de quantity es menor o igual a 0, el sistema genera un error e impide la inserción del registro.
-Tabla involucrada:
-•	Sales 
+* Sales
 
-2.	 trg_validate_price
+### sp_register_warranty
 
-Descripción:
-Se ejecuta antes de insertar un producto en la tabla Products.
-Objetivo:
-Evitar que se registren productos con precios negativos.
-Funcionamiento:
-Si el campo price es menor a 0, el trigger bloquea la operación.
-Tabla involucrada:
-•	Products 
+**Descripción:** Registra un reclamo de garantía.
+**Objetivo:** Gestionar garantías de manera estructurada.
+**Tabla:**
 
-3.	trg_validate_sale_date
+* Warranty
 
-Descripción:
-Se ejecuta antes de insertar una venta.
-Objetivo:
-Asegurar que las ventas no tengan fechas futuras.
-Funcionamiento:
-Si la fecha de venta (sale_date) es mayor a la fecha actual, se genera un error.
-Tabla involucrada:
-•	Sales 
+### sp_update_warranty_status
 
-4.	trg_validate_warranty_date
+**Descripción:** Actualiza el estado de una garantía.
+**Objetivo:** Permitir el seguimiento del proceso de garantía.
+**Tabla:**
 
-Descripción:
-Se ejecuta antes de insertar un reclamo de garantía.
-Objetivo:
-Garantizar coherencia entre la fecha de venta y la fecha del reclamo.
-Funcionamiento:
-El trigger obtiene la fecha de la venta asociada y verifica que la fecha del reclamo (claim_date) no sea anterior.
-Tablas involucradas:
-•	Warranty 
-•	Sales 
-5.	trg_sales_audit
+* Warranty
 
-Descripción:
-Se ejecuta después de insertar una venta.
-Objetivo:
-Registrar automáticamente cada venta en una tabla de auditoría.
-Funcionamiento:
-Cada vez que se inserta una venta, se guarda un registro en la tabla Sales_Audit con el ID de la venta, tipo de acción y fecha.
-Tablas involucradas:
-•	Sales 
-•	Sales_Audit
+### sp_sales_by_date_range
 
+**Descripción:** Obtiene ventas entre dos fechas.
+**Objetivo:** Generar reportes por periodos.
+**Tabla:**
 
+* Sales
 
+### sp_sales_by_customer
+
+**Descripción:** Obtiene ventas de un cliente específico.
+**Objetivo:** Analizar historial de compras.
+**Tabla:**
+
+* Sales
+
+---
+
+## 9) Triggers
+
+### trg_validate_quantity
+
+**Descripción:** Este trigger se ejecuta antes de insertar un registro en la tabla Sales.
+**Objetivo:** Validar que la cantidad de productos vendidos sea mayor a cero.
+**Funcionamiento:** Si el valor de *quantity* es menor o igual a 0, el sistema genera un error e impide la inserción del registro.
+**Tabla involucrada:**
+
+* Sales
+
+### trg_validate_price
+
+**Descripción:** Se ejecuta antes de insertar un producto en la tabla Products.
+**Objetivo:** Evitar que se registren productos con precios negativos.
+**Funcionamiento:** Si el campo *price* es menor a 0, el trigger bloquea la operación.
+**Tabla involucrada:**
+
+* Products
+
+### trg_validate_sale_date
+
+**Descripción:** Se ejecuta antes de insertar una venta.
+**Objetivo:** Asegurar que las ventas no tengan fechas futuras.
+**Funcionamiento:** Si la fecha de venta (*sale_date*) es mayor a la fecha actual, se genera un error.
+**Tabla involucrada:**
+
+* Sales
+
+### trg_validate_warranty_date
+
+**Descripción:** Se ejecuta antes de insertar un reclamo de garantía.
+**Objetivo:** Garantizar coherencia entre la fecha de venta y la fecha del reclamo.
+**Funcionamiento:** El trigger obtiene la fecha de la venta asociada y verifica que la fecha del reclamo (*claim_date*) no sea anterior.
+**Tablas involucradas:**
+
+* Warranty
+* Sales
+
+### trg_sales_audit
+
+**Descripción:** Se ejecuta después de insertar una venta.
+**Objetivo:** Registrar automáticamente cada venta en una tabla de auditoría.
+**Funcionamiento:** Cada vez que se inserta una venta, se guarda un registro en la tabla *Sales_Audit* con el ID de la venta, tipo de acción y fecha.
+**Tablas involucradas:**
+
+* Sales
+* Sales_Audit
